@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'twitch-ember-app',
     environment: environment,
-    rootURL: '/',
+    rootURL: '/twitch-search/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

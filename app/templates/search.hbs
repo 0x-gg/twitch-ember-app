@@ -1,0 +1,36 @@
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+<div class="main-container">
+	<div class="main-header">
+		twitch.tv stream search!
+	</div>
+
+	<div class="input-container">
+		<div class="search-container">
+			{{input
+				value=query
+			  enter=(action 'updateQuery')
+			  class="light"
+			  placeholder="Search streams..."
+			}}
+			<button class="btn btn-primary" {{action 'updateQuery'}}>Search</button>
+		</div>
+
+		{{pagination-buttons
+			on-click-prev=(action 'prevPage')
+			on-click-next=(action 'nextPage')
+			page=page
+			pages=model.meta.pages
+		}}
+	</div>
+
+	<div class="results-container">
+		Total results: {{model.meta.total}}
+	</div>
+	<div class="streams-container">
+		{{search-streams
+			streams=model
+		}}
+	</div>
+</div>
