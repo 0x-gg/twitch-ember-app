@@ -19,6 +19,6 @@ export default Ember.Route.extend({
   actions: {
     refreshModel() {
       this.refresh();
-    }
+  	 }
   }
 });

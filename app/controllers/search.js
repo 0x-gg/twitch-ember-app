@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   queryParams: ['query', 'page'],
-  pages: 1,
+  page: 1,
 
   actions: {
     updateQuery() {

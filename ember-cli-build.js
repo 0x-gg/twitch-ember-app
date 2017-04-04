@@ -6,9 +6,19 @@ module.exports = function(defaults) {
     // Add options here
     dotEnv: {
       clientAllowedKeys: ['TWITCH_KEY']
+    },
+    fingerprint: {
+      enabled: true,
+      generateAssetMap: true
+    },
+    minifyJS: {
+      enabled: true
+    },
+    minifyCSS: {
+      enables: true
     }
   });
-  
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //

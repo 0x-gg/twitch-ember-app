@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'twitch-ember-app',
     environment: environment,
-    rootURL: '/twitch-search/',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -34,6 +34,7 @@ module.exports = function(environment) {
   if (environment === 'test') {
     // Testem prefers this...
     ENV.locationType = 'none';
+    ENV.rootURL = '/Users/gauravgada/GitHub/twitch-ember-app/dist/',
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
@@ -43,7 +44,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.rootURL = '/gg01/twitch-search/';
   }
 
   return ENV;
