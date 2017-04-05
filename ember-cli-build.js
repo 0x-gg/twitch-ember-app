@@ -15,7 +15,7 @@ module.exports = function(defaults) {
       enabled: true
     },
     minifyCSS: {
-      enables: true
+      enabled: true
     }
   });
 

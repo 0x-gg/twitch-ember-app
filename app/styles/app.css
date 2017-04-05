@@ -1,4 +1,53 @@
- .main-container {
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,23 +58,25 @@
   font-family: 'Press Start 2P', cursive;
   width: 60vw;
   padding: 2rem;
+  padding-bottom: 3rem;
   line-height: 4rem;
   font-size: 3rem;
 }
 
 .input-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 55vw;
-  padding-bottom: 0.5rem;
   font-family: 'Press Start 2P', cursive;
+  display: flex;
+  width: 60vw;
+  padding-bottom: 1rem;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .results-container {
   font-family: 'Press Start 2P', cursive;
   text-align: right;
-  width: 55vw;
+  width: 60vw;
+  padding-bottom: 2rem;
 }
 
 .streams-container {
@@ -34,20 +85,32 @@
   width: 70vw;
 }
 
+.listing-container {
+  display: flex;
+  padding: 1.5rem;
+}
+
 .stream-url-title {
-  font-size: 0.6rem;
+  font-size: 1.1rem;
   text-decoration: none;
   color: rgba(100, 65, 164, 1);
-  padding-bottom: 1.5rem;
 }
 
 button {
   font-family: 'Press Start 2P', cursive;
   background-color: rgba(100, 65, 164, 0.8);
+  font-size: 1rem;
+  padding: 0.8rem;
 }
 
 .game-title {
-  font-size: 0.55rem;
+  font-size: 0.6rem;
+  vertical-align: middle;
+}
+
+.game-viewers {
+  vertical-align: middle;
+  font-size: 0.9rem;
 }
 
 .stream-url-title:hover {
@@ -71,18 +134,15 @@ button {
   margin-left: 2rem;
 }
 
-.listing-container {
-  display: flex;
-  padding: 1.5rem;
-}
-
-.pagination-buttons {
+.pagination-container {
 }
 
 input[type="text"] {
     border: 1px solid #eee;
-    margin: 10px;
-    padding: 5px;
+    padding: 1rem;
+    font-size: 0.8rem;
+    width: 13.5rem;
+    font-family: 'Press Start 2P', cursive;
     -moz-transition: all .5s;
     -webkit-transition: all .5s;
     transition: all .5s;
@@ -93,4 +153,87 @@ input[type="text"]:focus {
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(100, 65, 164, 0.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(100, 65, 164, 0.6);
+}
+
+@media only screen and (max-width: 500px) {
+  .main-container {
+   width: 100%;
+ }
+
+ .main-header {
+   width: 100vw;
+   padding: 1rem;
+   line-height: 2.2rem;
+   font-size: 2rem;
+   text-align: center;
+ }
+
+ .input-container {
+   width: 90vw;
+   padding-top: 0.5rem;
+   padding-bottom: 0.5rem;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .listing-container {
+   width: 85vw;
+   flex-direction: column;
+   padding: 1rem;
+ }
+
+ button {
+   font-size: 0.9rem;
+   padding: 0.4rem;
+ }
+
+ input[type="text"] {
+     padding: 0.7rem;
+     font-size: 0.5rem;
+     width: 45vw;
+ }
+
+ img {
+   width: 80vw;
+   height: auto;
+ }
+
+ .pagination-container {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 80vw;
+   padding: 0.5rem;
+   font-size: 0.8rem;
+ }
+
+ .results-container {
+   font-size: 0.8rem;
+   text-align: center;
+   padding-bottom: 0.5rem;
+   width: 90vw;
+ }
+
+ .streams-container {
+   line-height: 1.2rem;
+   width: 90vw;
+ }
+
+ .stream-url-title {
+   font-size: 0.8rem;
+   padding-bottom: 1rem;
+ }
+
+ .game-title {
+   font-size: 0.3rem;
+ }
+
+ .game-viewers {
+   font-size: 0.6rem;
+ }
+
+ .stream-info {
+   margin-left: 0rem;
+ }
 }
